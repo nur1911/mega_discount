@@ -7,14 +7,17 @@
 #
 # from discount.models import Company
 # from discount.serializers import CompanyListSerializer2
-#
-#
-# from discount.operations import get_company_dto
+
+
+from discount.operations import get_company_dto
 from discount.serializers import CompanyDtoSerializer
 from rest_framework.generics import ListAPIView
 
-#
-# class DiscountList(ListAPIView):
-#     queryset = get_company_dto()
-#     print(queryset)
-#     serializer_class = CompanyDtoSerializer
+
+class DiscountList(ListAPIView):
+    queryset = get_company_dto()
+    print(queryset)
+    serializer_class = CompanyDtoSerializer
+
+class DiscountDetail(ListAPIView):
+    pass

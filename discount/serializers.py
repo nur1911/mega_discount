@@ -21,8 +21,14 @@ class CompanyDtoSerializer(serializers.Serializer):
     photo = serializers.URLField()
     description = serializers.CharField(max_length=1000)
     discount_percent = serializers.IntegerField()
-    city_name = serializers.CharField(max_length=10)
+    city = serializers.CharField(max_length=10)
     view_count = serializers.IntegerField()
+
+
+
+
+
+
 
 
 
