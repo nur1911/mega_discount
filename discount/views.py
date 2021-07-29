@@ -9,15 +9,19 @@
 # from discount.serializers import CompanyListSerializer2
 
 
-from discount.operations import get_company_dto
-from discount.serializers import CompanyDtoSerializer
+from discount.operations import get_company_dto, get_company_detail_dto
+from discount.serializers import CompanyDtoSerializer, CompanyDetailSerializer
 from rest_framework.generics import ListAPIView
+from rest_framework import pagination
 
 
 class DiscountList(ListAPIView):
     queryset = get_company_dto()
-    print(queryset)
     serializer_class = CompanyDtoSerializer
+    pagination_class = pagination.LimitOffsetPagination
 
 class DiscountDetail(ListAPIView):
-    pass
+    queryset = get_company_detail_dto()
+    serializer_class = CompanyDetailSerializer
+    pagination_class = pagination.LimitOffsetPagination
+

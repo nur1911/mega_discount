@@ -24,7 +24,14 @@ class CompanyDtoSerializer(serializers.Serializer):
     city = serializers.CharField(max_length=10)
     view_count = serializers.IntegerField()
 
-
+class CompanyDetailSerializer(CompanyDtoSerializer):
+    urls = serializers.URLField()
+    type = serializers.CharField(max_length=10)
+    logo = serializers.URLField()
+    adress = serializers.CharField(max_length=20)
+    longitude = serializers.CharField(max_length=20)
+    latitude = serializers.CharField(max_length=20)
+    working_hours = serializers.CharField(max_length=20)
 
 
 
